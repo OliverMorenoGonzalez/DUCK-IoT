@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  eclipse-mosquitto:
+    image: eclipse-mosquitto
+    container_name: eclipse-mosquitto
+    restart: always
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    networks: 
+      - duck
+
+networks: 
+  duck:
+    driver: bridge
